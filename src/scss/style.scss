@@ -1,7 +1,16 @@
 @import url(null.css);
 @import url(fonts.css);
 
+//Colors
+
+$black: #1D1700;
+$blue: #0278E5;
+$cremWhite: #FAF8F7;
+
+
 body {
     font-family: 'Stem', sans-serif;
     font-weight: 300;
+    color: $black;
 }
+
