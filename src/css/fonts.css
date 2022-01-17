@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap');
+
+@font-face {
+    font-family: 'Stem';
+    src: url('../fonts/stem/Stem-Light.eot');
+    src: local('☺'), url('../fonts/stem/Stem-Light.woff') format('woff'), url('../fonts/stem/Stem-Light.ttf') format('truetype'), url('../fonts/stem/Stem-Light.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Stem';
+	src: url('../fonts/stem/Stem-Medium.eot');
+	src: local('☺'), url('../fonts/stem/Stem-Medium.woff') format('woff'), url('../fonts/stem/Stem-Medium.ttf') format('truetype'), url('../fonts/stem/Stem-Medium.svg') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Stem';
+	src: url('../fonts/stem/Stem-Regular.eot');
+	src: local('☺'), url('../fonts/stem/Stem-Regular.woff') format('woff'), url('../fonts/stem/Stem-Regular.ttf') format('truetype'), url('../fonts/stem/Stem-Regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
