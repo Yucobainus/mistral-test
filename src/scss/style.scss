@@ -45,6 +45,7 @@ body {
     // .header__container
     @include adaptiveValue("padding-top", 58, 10, $containerWidth);
     @include adaptiveValue("padding-bottom", 40, 10, $containerWidth);
+    position: relative;
     &__container {
         display: flex;
         align-items: center;
@@ -70,57 +71,129 @@ body {
             display: flex;
             flex-wrap: wrap;
             row-gap: 10px;
-            & li {
-                text-transform: uppercase;
-                position: relative;
-                font-size: 1.25rem;
-                font-weight: 500;
-                &:not(:last-child) {
-                    @include adaptiveValue("margin-right", 51, 26, $containerWidth, $tabletWidth);
-                }
-                // Without bg-image
-                // &::before {
-                //     content: "";
-                //     position: absolute;
-                //     top: 0;
-                //     left: -12px;
-                //     width: 5px;
-                //     height: 100%;
-                //     transform: rotate(30deg);
-                //     background-color: $blue;
-                // }
-                //With bg-image
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%) translateX(-150%);
-                    left: 0;
-                    width: 13px;
-                    height: 100%;
-                    background-image: url(../../assets/icons/header-nav.svg);
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
+        }
+        &-item {
+            text-transform: uppercase;
+            position: relative;
+            font-size: 1.25rem;
+            font-weight: 500;
+            &:not(:last-child) {
+                @include adaptiveValue("margin-right", 51, 26, $containerWidth, $tabletWidth);
+                @media screen and (max-width: #{$tabletWidth + px}) {
+                    margin-right: 0;
+                    @include adaptiveValue("margin-bottom", 50, 6, $tabletWidth, $minWidth);
                 }
             }
+            // Without bg-image
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     top: 0;
+            //     left: -12px;
+            //     width: 5px;
+            //     height: 100%;
+            //     transform: rotate(30deg);
+            //     background-color: $blue;
+            // }
+            //With bg-image
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%) translateX(-150%);
+                left: 0;
+                width: 13px;
+                height: 100%;
+                background-image: url(../../assets/icons/header-nav.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            &_active {
+                color: $blue;
+            }
+            @media screen and (max-width: #{$tabletWidth + px}) {
+                color: white;
+                font-size: 1.475rem;
+            }
         }
-        &_active {
-            color: $blue;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            display: none;
         }
     }
 
     // .header__options
 
     &__options {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 35px;
+        @media screen and (max-width: #{$tabletWidth + px}) {
+            display: none;
+        }
+    }
+
+    &__icon {
+        margin-right: 0;
+        margin-left: auto;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 3;
+        @media screen and (min-width: calc(#{$tabletWidth + px} + 1px )) {
+            display: none;
+        }
+    }
+
+    &__mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: 0.5s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        &._active {
+            transform: translateX(0);
+        }
+        @media screen and (min-width: calc(#{$tabletWidth + px} + 1px )) {
+            display: none;
+        }
+    }
+}
+
+.mobile-header {
+    overflow: scroll;
+    &__nav {
+        display: flex;
+        margin-top: 50px;
+        margin-bottom: 80px;
+        padding: 15px;
+        & ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+    &__options {
+        padding: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 35px;
+        justify-content: center;
+        justify-self: flex-end;
     }
 }
 
 .options-header {
     // .options-header__item
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 45px;
     &__item {
         display: inline-block;
         &:not(:last-child) {
@@ -142,7 +215,7 @@ body {
             }
         }
 
-        &::after{
+        &::after {
             position: absolute;
             background-color: white;
             font-size: 0.875rem;
@@ -156,21 +229,66 @@ body {
         }
 
         // .options-header__item_diagram
-
         &_diagram {
             position: relative;
-            &::after{
+            &::after {
                 content: "2";
             }
         }
 
         // .options-header__item_cart
-
         &_cart {
             position: relative;
-            &::after{
+            &::after {
                 content: "4";
             }
         }
+    }
+}
+
+.menu-icon {
+    padding: 10px;
+    &:hover {
+        cursor: pointer;
+    }
+    & span,
+    &::before,
+    &::after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 15%;
+        background-color: $blue;
+        transition: all 0.5s ease 0s;
+    }
+    &::before,
+    &::after {
+        content: "";
+    }
+    & span {
+        top: 50%;
+        transform: scale(1) translateY(-50%);
+    }
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
+
+    &._active span {
+        top: 50%;
+        transform: scale(0) translateY(-50%);
+        background-color: #fff;
+    }
+    &._active::before {
+        top: 50%;
+        transform: rotate(-45deg) translateY(-50%);
+        background-color: #fff;
+    }
+    &._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translateY(50%);
+        background-color: #fff; 
     }
 }
