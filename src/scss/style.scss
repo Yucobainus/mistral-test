@@ -1,16 +1,176 @@
 @import url(null.css);
 @import url(fonts.css);
 
+//Adaptive Value
+
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: 320) {
+    #{$property}: #{$startSize + px};
+    $addSize: $startSize - $minSize;
+    @media screen and (max-width: #{$containerWidth + px}) {
+        #{$property}: calc(
+            #{$minSize + px} + #{$addSize} * ((100vw - #{$widthTo + px}) / (#{$containerWidth} - #{$widthTo}))
+        );
+    }
+}
+
 //Colors
 
-$black: #1D1700;
-$blue: #0278E5;
-$cremWhite: #FAF8F7;
+$black: #1d1700;
+$blue: #0278e5;
+$cremWhite: #faf8f7;
 
+//Widths
+$containerWidth: 1834;
+$minWidth: 320;
+$tabletWidth: 768;
+$mobileWidth: 576;
+
+//Main styles
 
 body {
-    font-family: 'Stem', sans-serif;
+    font-family: "Stem", sans-serif;
     font-weight: 300;
     color: $black;
 }
 
+.container {
+    max-width: $containerWidth + px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+//Header
+
+.header {
+    // .header__container
+    @include adaptiveValue("padding-top", 58, 10, $containerWidth);
+    @include adaptiveValue("padding-bottom", 40, 10, $containerWidth);
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    // .header__logo
+
+    &__logo {
+        @include adaptiveValue("margin-right", 101, 35, $containerWidth, $tabletWidth);
+        height: 42px;
+        & img {
+            max-width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .header__nav
+
+    &__nav {
+        @include adaptiveValue("margin-right", 54, 10, $containerWidth, $tabletWidth);
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 10px;
+            & li {
+                text-transform: uppercase;
+                position: relative;
+                font-size: 1.25rem;
+                font-weight: 500;
+                &:not(:last-child) {
+                    @include adaptiveValue("margin-right", 51, 26, $containerWidth, $tabletWidth);
+                }
+                // Without bg-image
+                // &::before {
+                //     content: "";
+                //     position: absolute;
+                //     top: 0;
+                //     left: -12px;
+                //     width: 5px;
+                //     height: 100%;
+                //     transform: rotate(30deg);
+                //     background-color: $blue;
+                // }
+                //With bg-image
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%) translateX(-150%);
+                    left: 0;
+                    width: 13px;
+                    height: 100%;
+                    background-image: url(../../assets/icons/header-nav.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        &_active {
+            color: $blue;
+        }
+    }
+
+    // .header__options
+
+    &__options {
+    }
+}
+
+.options-header {
+    // .options-header__item
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 45px;
+    &__item {
+        display: inline-block;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-right", 18, 8, $containerWidth, $tabletWidth);
+        }
+
+        & a {
+            background-color: $cremWhite;
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0px 3px 6px rgba(29, 23, 0, 0.1);
+        }
+
+        // .options-header__item_btn
+        &_btn {
+            & a {
+                border-radius: 39px;
+                padding: 12px 28px;
+            }
+        }
+
+        &::after{
+            position: absolute;
+            background-color: white;
+            font-size: 0.875rem;
+            width: 21px;
+            line-height: 19px;
+            top: -100%;
+            right: -10%;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid $black;
+        }
+
+        // .options-header__item_diagram
+
+        &_diagram {
+            position: relative;
+            &::after{
+                content: "2";
+            }
+        }
+
+        // .options-header__item_cart
+
+        &_cart {
+            position: relative;
+            &::after{
+                content: "4";
+            }
+        }
+    }
+}
