@@ -533,12 +533,62 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 13px;
+  margin-bottom: 29px;
 }
 
 @media screen and (max-width: 1834px) {
   .catalog__tags {
-    gap: calc( 5px + 8 * ((100vw - 768px) / (1834 - 768)));
+    gap: calc( 5px + 8 * ((100vw - 576px) / (1834 - 576)));
   }
+}
+
+@media screen and (max-width: 1834px) {
+  .catalog__tags {
+    margin-bottom: calc( 20px + 9 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .catalog__tags {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: scroll;
+    max-height: 300px;
+  }
+}
+
+.catalog__sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 29px;
+}
+
+@media screen and (max-width: 1834px) {
+  .catalog__sort {
+    margin-bottom: calc( 10px + 19 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .catalog__sort {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.catalog__grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .tags__item {
@@ -554,5 +604,141 @@ body {
 .tags__item._active {
   background-color: #0278e5;
   color: white;
+}
+
+.sorting__title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.sorting__select {
+  border: 1px solid #1d1700;
+  padding: 12px 31px 12px 12px;
+  border-radius: 4px;
+  background-image: url(../../assets/img/caret.svg);
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 95%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.sorting__select:focus {
+  outline: none;
+}
+
+.sorting__select option {
+  font-family: "Stem", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.grid-catalog__item {
+  background-color: #faf8f7;
+  padding: 28px;
+}
+
+@media screen and (max-width: 1834px) {
+  .grid-catalog__item {
+    padding: calc( 10px + 18 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.catalog-item__picture {
+  margin-bottom: 14px;
+  max-width: 364px;
+}
+
+@media screen and (max-width: 1834px) {
+  .catalog-item__picture {
+    margin-bottom: calc( 8px + 6 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.catalog-item__picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.catalog-item__title {
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #0278e5;
+  text-align: center;
+  margin-bottom: 31px;
+}
+
+@media screen and (max-width: 1834px) {
+  .catalog-item__title {
+    margin-bottom: calc( 15px + 16 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.catalog-item__parameter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.catalog-item__parameter:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.catalog-item__info {
+  margin-top: 31px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1834px) {
+  .catalog-item__info {
+    margin-top: calc( 15px + 16 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.catalog-item__price {
+  font-size: 1.25rem;
+  color: #0278e5;
+  font-weight: 500;
+}
+
+.catalog-item__price_old {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #1d1700;
+  text-decoration: line-through;
+}
+
+.catalog-item__status {
+  font-size: 0.875rem;
+}
+
+.catalog-item__status span {
+  font-family: "Stem", sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+}
+
+.catalog-item__status._icon-check::before {
+  color: #c5f3af;
+}
+
+.catalog-item__status._icon-close::before {
+  color: #f3d8af;
 }
 /*# sourceMappingURL=style.css.map */
