@@ -325,6 +325,7 @@ body {
     display: flex;
     justify-content: center;
     @include adaptiveValue("column-gap", 34, 8, $containerWidth, $smallDesktop);
+    @include adaptiveValue("margin-bottom", 37, 15, $containerWidth, $tabletWidth);
     // .banner__section
     @media screen and (max-width: #{$smallDesktop + px}) {
         flex-direction: column;
@@ -339,7 +340,7 @@ body {
         @include adaptiveValue("column-gap", 78, 50, $containerWidth, $smallDesktop);
         @include adaptiveValue("padding-left", 110, 50, $containerWidth, $smallDesktop);
         @include adaptiveValue("padding-right", 110, 50, $containerWidth, $smallDesktop);
-        @media screen and (max-width: #{$mobileWidth + px}) {
+        @media screen and (max-width: #{$mobileWidth  + px}) {
             padding: 40px;
             flex-direction: column;
             align-items: center;
@@ -366,5 +367,53 @@ body {
         font-weight: 300;
         letter-spacing: 0.08em;
         font-size: 1.25rem;
+    }
+}
+//Catalog
+.catalog {
+    width: 100%;
+    padding: 20px;
+    // .catalog__tags
+    &__tags {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        flex-wrap: wrap;
+        @include adaptiveValue("gap", 13, 5, $containerWidth, $tabletWidth);
+    }
+
+    // .catalog__sort
+
+    &__sort {
+    }
+}
+.tags {
+    // .tags__item
+
+    &__item {
+        border: 2px solid $blue;
+        color: $blue;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding: 10px 16px;
+        background-color: white;
+        border-radius: 37px;
+        &._active {
+            background-color: $blue;
+            color: white;
+        }
+    }
+}
+
+//Sorting
+.sorting {
+    // .sorting__title
+
+    &__title {
+    }
+
+    // .sorting__select
+
+    &__select {
     }
 }

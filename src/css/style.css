@@ -418,12 +418,19 @@ body {
           justify-content: center;
   -webkit-column-gap: 34px;
           column-gap: 34px;
+  margin-bottom: 37px;
 }
 
 @media screen and (max-width: 1834px) {
   .banner {
     -webkit-column-gap: calc( 8px + 26 * ((100vw - 1024px) / (1834 - 1024)));
             column-gap: calc( 8px + 26 * ((100vw - 1024px) / (1834 - 1024)));
+  }
+}
+
+@media screen and (max-width: 1834px) {
+  .banner {
+    margin-bottom: calc( 15px + 22 * ((100vw - 768px) / (1834 - 768)));
   }
 }
 
@@ -505,5 +512,47 @@ body {
   font-weight: 300;
   letter-spacing: 0.08em;
   font-size: 1.25rem;
+}
+
+.catalog {
+  width: 100%;
+  padding: 20px;
+}
+
+.catalog__tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 13px;
+}
+
+@media screen and (max-width: 1834px) {
+  .catalog__tags {
+    gap: calc( 5px + 8 * ((100vw - 768px) / (1834 - 768)));
+  }
+}
+
+.tags__item {
+  border: 2px solid #0278e5;
+  color: #0278e5;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 10px 16px;
+  background-color: white;
+  border-radius: 37px;
+}
+
+.tags__item._active {
+  background-color: #0278e5;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

@@ -113,6 +113,76 @@
                     </div>
                 </div>
             </div>
+            <!--Форму поиска по каталогу можно конечно было бы и реализовать без тэга form, если бы фронтенд часть писалась на Vue и иже с ним, так как можно было бы использовать axios,
+                но я решил всё равно его использовать.-->
+            <form action="#" method="post" class="catalog">
+
+                <div class="catalog__tags tags">
+                    <div class="tags__item">
+                        <a href="#">Кондиционеры</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Вентиляция</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Инверторные</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Дизайнерские</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">С Wi Fi</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item _active">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                    <div class="tags__item">
+                        <a href="#">Сплит-системы</a>
+                    </div>
+                </div>
+
+                <div class="catalog__sort sorting">
+                    <label class="sorting__title" for="sorting">
+                        Сортировка:
+                    </label>
+                    <select class="sorting__select" name="sorting" id="sorting">
+                        <option value="toUp">По возрастанию цены</option>
+                        <option value="toLow">По убыванию цены</option>
+                    </select>
+
+                </div>
+
+            </form>
 
         </div>
     </main>
