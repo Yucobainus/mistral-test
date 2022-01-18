@@ -24,6 +24,9 @@ $containerWidth: 1834;
 $minWidth: 320;
 $tabletWidth: 768;
 $mobileWidth: 576;
+$largeDesktop: 1440;
+$mediumDesktop: 1200;
+$smallDesktop: 1024;
 
 //Main styles
 
@@ -43,9 +46,10 @@ body {
 
 .header {
     // .header__container
+    position: relative;
     @include adaptiveValue("padding-top", 58, 10, $containerWidth);
     @include adaptiveValue("padding-bottom", 40, 10, $containerWidth);
-    position: relative;
+    @include adaptiveValue("margin-bottom", 63, 30, $containerWidth);
     &__container {
         display: flex;
         align-items: center;
@@ -54,8 +58,8 @@ body {
     // .header__logo
 
     &__logo {
-        @include adaptiveValue("margin-right", 101, 35, $containerWidth, $tabletWidth);
         height: 42px;
+        @include adaptiveValue("margin-right", 101, 35, $containerWidth, $tabletWidth);
         & img {
             max-width: 100%;
             height: 100%;
@@ -242,7 +246,7 @@ body {
             width: 21px;
             height: 21px;
             border: 1px solid $black;
-            background-color: $cremWhite;
+            background-color: white;
         }
     }
 }
@@ -290,6 +294,77 @@ body {
     &._active::after {
         bottom: 50%;
         transform: rotate(45deg) translateY(50%);
-        background-color: #fff; 
+        background-color: #fff;
+    }
+}
+
+//Main
+
+.main {
+    display: flex;
+    column-gap: 176px;
+    &__sidebar {
+        width: 303px;
+        background-color: red;
+        @media screen and(max-width: #{$largeDesktop + px}) {
+            display: none;
+        }
+    }
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+//Content part
+
+//Banner
+.banner {
+    display: flex;
+    justify-content: center;
+    @include adaptiveValue("column-gap", 34, 8, $containerWidth, $smallDesktop);
+    // .banner__section
+    @media screen and (max-width: #{$smallDesktop + px}) {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    &__section {
+        background-color: $cremWhite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0;
+        @include adaptiveValue("column-gap", 78, 50, $containerWidth, $smallDesktop);
+        @include adaptiveValue("padding-left", 110, 50, $containerWidth, $smallDesktop);
+        @include adaptiveValue("padding-right", 110, 50, $containerWidth, $smallDesktop);
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            padding: 40px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            row-gap: 20px;
+        }
+    }
+
+    // .banner__picture
+
+    &__picture {
+        width: 170px;
+        height: 113px;
+        & img {
+            max-width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .banner__text
+
+    &__text {
+        font-weight: 300;
+        letter-spacing: 0.08em;
+        font-size: 1.25rem;
     }
 }
