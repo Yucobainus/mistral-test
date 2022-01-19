@@ -302,19 +302,23 @@ body {
 
 .main {
     display: flex;
-    column-gap: 176px;
+    column-gap: 140px;
     &__sidebar {
-        width: 303px;
+        flex-basis: 10%;
         background-color: red;
         @media screen and(max-width: #{$largeDesktop + px}) {
             display: none;
         }
     }
     &__content {
-        width: 100%;
+        flex-basis: 90%;
+        padding: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media screen and(max-width: #{$largeDesktop + px}) {
+            flex-basis: 100%;
+        }
     }
 }
 
@@ -322,8 +326,8 @@ body {
 
 //Banner
 .banner {
+    width: 100%;
     display: flex;
-    justify-content: center;
     @include adaptiveValue("column-gap", 34, 8, $containerWidth, $smallDesktop);
     @include adaptiveValue("margin-bottom", 37, 15, $containerWidth, $tabletWidth);
     // .banner__section
@@ -334,6 +338,8 @@ body {
     &__section {
         background-color: $cremWhite;
         display: flex;
+        flex-basis: 50%;
+        flex-grow: 1;
         align-items: center;
         justify-content: center;
         padding: 50px 0;
@@ -352,10 +358,10 @@ body {
     // .banner__picture
 
     &__picture {
-        width: 170px;
+        max-width: 170px;
         height: 113px;
         & img {
-            max-width: 100%;
+            width: 100%;
             height: 100%;
             object-fit: contain;
         }
@@ -371,11 +377,9 @@ body {
 }
 //Catalog
 .catalog {
-    width: 100%;
     // .catalog__tags
     &__tags {
         display: flex;
-        padding: 20px;
         flex-direction: row;
         justify-content: left;
         flex-wrap: wrap;
@@ -405,7 +409,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
+
         gap: 42px;
         @include adaptiveValue("margin-bottom", 94, 50, $containerWidth, $mobileWidth);
     }
@@ -413,11 +417,12 @@ body {
     // .catalog__search
 
     &__search {
-        padding: 35px 50px;
+        padding: 35px 30px;
         background-color: $cremWhite;
         display: flex;
         align-items: center;
         @include adaptiveValue("gap", 60, 20, $containerWidth, $mobileWidth);
+        @include adaptiveValue("margin-bottom", 94, 50, $containerWidth, $mobileWidth);
         @media screen and (max-width: #{$mobileWidth + px}) {
             flex-direction: column;
         }
@@ -480,6 +485,7 @@ body {
 
     &__item {
         flex-basis: calc((100% / 3) - 42px);
+        flex-grow: 1;
         background-color: $cremWhite;
         @include adaptiveValue("padding", 28, 20, $containerWidth, $mobileWidth);
         @media screen and (max-width: #{$mediumDesktop + px}) {
@@ -603,7 +609,7 @@ body {
         background-color: #fff;
         border-radius: 20px;
         font-size: 1.125rem;
-        font-style: 300;
+        font-weight: 300;
         padding: 9px 28px;
         text-align: center;
         display: flex;
@@ -654,10 +660,10 @@ body {
             @include adaptiveValue("padding-left", 36, 20, $containerWidth, $mobileWidth);
             font-weight: 300;
             font-size: 1.125rem;
-            color: #D7D5D5;
+            color: #d7d5d5;
             letter-spacing: 0.04em;
             @media screen and (max-width: #{$mobileWidth + px}) {
-                font-size: .9rem;
+                font-size: 0.9rem;
             }
         }
     }
@@ -666,7 +672,8 @@ body {
 
     &__btn {
         flex-basis: 10%;
-        & a {   
+        & a,
+        input {
             background-color: $blue;
             padding: 16px 61px;
             font-size: 1.125rem;
@@ -677,5 +684,58 @@ body {
         @media screen and (max-width: #{$mobileWidth + px}) {
             margin-top: 30px;
         }
+    }
+}
+
+//Advantages
+
+.advantages {
+    width: 100%;
+    // .advantages__title
+
+    &__title {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    // .advantages__content
+
+    &__content {
+    }
+
+    // .advantages__list
+
+    &__list {
+    }
+
+    // .advantages__item
+
+    &__item {
+    }
+
+    // .advantages__banner
+
+    &__banner {
+    }
+
+    // .advantages__text
+
+    &__text {
+    }
+}
+.content-title {
+    position: relative;
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    &::before {
+        position: absolute;
+        content: "";
+        @include adaptiveValue("width", 44, 20, $containerWidth, $mobileWidth);
+        height: 1.36px;
+        background-color: $blue;
+        top: 50%;
+        transform: translateY(-50%) translateX(-125%);
+        left: 0;
     }
 }
