@@ -1183,7 +1183,7 @@ body {
         }
     }
 
-    & .slick-vertical .slick-slide{
+    & .slick-vertical .slick-slide {
         border: none;
         outline: none;
     }
@@ -1223,12 +1223,12 @@ body {
                     display: inline-block;
                     width: 100%;
                     height: 2px;
-                    background-color: #E3E4E5;
+                    background-color: #e3e4e5;
                     & button {
                         display: none;
                     }
                     &.slick-active {
-                        &:before{
+                        &:before {
                             content: "";
                             position: absolute;
                             top: 0;
@@ -1239,6 +1239,141 @@ body {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+//Feedback
+
+.feedback {
+    width: 100%;
+    display: flex;
+    @include adaptiveValue("column-gap", 152, 130, $containerWidth, $mediumDesktop);
+    @include adaptiveValue("margin-bottom", 100, 30, $containerWidth, $tabletWidth);
+    @media screen and (max-width: #{$mediumDesktop + px}) {
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 20px;
+    }
+
+    // .feedback__title
+
+    &__title {
+        @include adaptiveValue("margin-bottom", 42, 20, $containerWidth, $tabletWidth);
+    }
+
+    // .feedback__slider
+    &__slider {
+        flex-basis: 30%;
+        flex-grow: 1;
+        @media screen and (max-width: #{$mediumDesktop + px}) {
+            width: 100%;
+        }
+        // .feedback__slider_wrapper
+        &_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            & ._prev,
+            ._next {
+                @media screen and (max-width: #{$mobileWidth + px}) {
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    &__inner {
+        width: 80%;
+        @media screen and (max-width: #{$mobileWidth + px}) {
+            width: 100%;
+            height: 80%;
+        }
+    }
+
+    // .feedback__slide
+
+    &__slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+            object-fit: contain;
+            margin: 0 auto;
+        }
+    }
+
+    // .feedback__arrow
+
+    &__arrow {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+        box-shadow: 0px 3px 6px rgba(29, 23, 0, 0.1);
+        border-radius: 50%;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        &._next {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__mobile {
+        &_nav {
+            display: flex;
+            justify-content: center;
+
+            @media screen and (min-width: #{$mobileWidth + px}) {
+                display: none;
+            }
+            & div {
+                margin: 0 10px;
+            }
+        }
+    }
+
+    // .feedback__certif
+
+    &__certif {
+        flex-basis: 70%;
+        @media screen and (max-width: #{$mediumDesktop + px}) {
+            width: 100%;
+        }
+        flex-grow: 1;
+        // .feedback__certif_grid
+
+        &_grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 42px;
+        }
+
+        // .feedback__certif_item
+
+        &_item {
+            min-height: 250px;
+            background-color: #faf8f7;
+            flex-basis: calc((100% / 4) - 42px);
+            align-items: center;
+            flex-grow: 1;
+            @media screen and (max-width: #{$largeDesktop + px}) {
+                flex-basis: calc((100% / 3) - 42px);
+            }
+            @media screen and (max-width: #{$mediumDesktop + px}) {
+                flex-basis: calc((100% / 4) - 42px);
+            }
+            @media screen and (max-width: #{$smallDesktop + px}) {
+                flex-basis: calc((100% / 2) - 42px);
+            }
+            @media screen and (max-width: #{$mobileWidth + px}) {
+                flex-basis: 100%;
             }
         }
     }
