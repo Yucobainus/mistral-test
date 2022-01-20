@@ -93,8 +93,179 @@
     </header>
 
     <main class="main container">
-        <aside class="main__sidebar sidebar">sidebar</aside>
-        <div class="main__content">
+        <div class="sidebar__active active">
+            <img src="assets/icons/sidebar.svg" alt="sidebar-active">
+        </div>
+        <aside class="main__sidebar sidebar">
+
+            <div class="sidebar__title">
+                <h5>Выбор по параметрам:</h5>
+            </div>
+
+            <div class="sidebar__scrollbar scrollbar">
+                <div class="scrollbar__title">
+                    Цена:
+                </div>
+                <div class="scrollbar__container">
+                    <input type="range" min="20" max="100" value="50" class="scrollbar__slider" id="myRange">
+                </div>
+                <div class="scrollbar__options">
+                    <div class="scrollbar__value">
+                        <input type="text" value="0 ₽">
+                    </div>
+                    <div class="scrollbar__line">
+
+                    </div>
+                    <div class="scrollbar__value">
+                        <input type="text" value="154600 ₽">
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar__scrollbar scrollbar">
+                <div class="scrollbar__title">
+                    Площадь помещения:
+                </div>
+                <div class="scrollbar__container">
+                    <input type="range" min="20" max="100" value="50" class="scrollbar__slider" id="myRange">
+                </div>
+                <div class="scrollbar__options">
+                    <div class="scrollbar__value">
+                        <input type="text" value="15 м2">
+                    </div>
+                    <div class="scrollbar__line">
+
+                    </div>
+                    <div class="scrollbar__value">
+                        <input type="text" value="42 м2">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="sidebar__list list">
+                <div class="list__title">
+                    Производитель:
+                </div>
+                <div class="list__search">
+                    <input type="text" placeholder="Поиск...">
+                </div>
+                <div class="list__checkbox">
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="sidebar__list list">
+                <div class="list__title">
+                    Дополнительные опции
+                </div>
+                <div class="list__checkbox _not-overflow">
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="check_one">
+                        <label for="check_one">ABASK (4)</label>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="sidebar__scrollbar scrollbar">
+                <div class="scrollbar__title">
+                    Мощность охлаждения
+                </div>
+                <div class="scrollbar__container">
+                    <input type="range" min="20" max="100" value="50" class="scrollbar__slider" id="myRange">
+                </div>
+                <div class="scrollbar__options">
+                    <div class="scrollbar__value">
+                        <input type="text" value="15 м2">
+                    </div>
+                    <div class="scrollbar__line">
+
+                    </div>
+                    <div class="scrollbar__value">
+                        <input type="text" value="42 м2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar__scrollbar scrollbar">
+                <div class="scrollbar__title">
+                    Уровень шума
+                </div>
+                <div class="scrollbar__container">
+                    <input type="range" min="20" max="100" value="50" class="scrollbar__slider" id="myRange">
+                </div>
+                <div class="scrollbar__options">
+                    <div class="scrollbar__value">
+                        <input type="text" value="15 м2">
+                    </div>
+                    <div class="scrollbar__line">
+
+                    </div>
+                    <div class="scrollbar__value">
+                        <input type="text" value="42 м2">
+                    </div>
+                </div>
+            </div>
+
+
+        </aside>
+        <div class="main__content ">
 
             <div class="banner">
                 <div class="banner__section">
@@ -633,6 +804,10 @@
                 </div>
             </div>
 
+            <!-- Пожалуй самая большая проблема при вёрстке которая у меня возникла была со слайдером, в последнее время я
+            часто верстал на Vue и делал слайдеры там. Я решил воспользоваться готовым решением slick-slide что повлекло
+            за собой некотоыре трудности -->
+
             <div class="portfolio">
                 <div class="portfolio__title content-title">
                     <span></span>
@@ -1000,7 +1175,6 @@
             </footer>
         </div>
 
-        </div>
     </main>
 
 
@@ -1010,6 +1184,30 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="src/js/slick/slick.min.js"></script>
     <script>
+
+
+        const sidebarIcon = document.querySelector('.active')
+        const sidebar = document.querySelector('.main__sidebar')
+        const mainContent = document.querySelector('.main__content')
+
+        if (sidebarIcon) {
+            sidebarIcon.addEventListener('click', function (e) {
+                sidebar.classList.toggle('_active')
+                sidebarIcon.classList.toggle('_disable')
+                document.body.classList.toggle('_lock');
+                mainContent.classList.toggle('_sidebar-active')
+            })
+        }
+
+        $(document).mouseup(function (e) {
+            if (!sidebar.contains(e.target)) {
+                sidebar.classList.remove('_active');
+                sidebarIcon.classList.remove('_disable')
+                document.body.classList.remove('_lock');
+                mainContent.classList.remove('_sidebar-active')
+            }
+        });
+
         $(document).ready(function () {
             $('.carousel-portfolio').slick({
                 infinite: true,
