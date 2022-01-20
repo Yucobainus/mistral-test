@@ -1361,6 +1361,13 @@ body {
   width: 100%;
   background-color: #faf8f7;
   position: relative;
+  margin-bottom: 114px;
+}
+
+@media screen and (max-width: 1834px) {
+  .callback {
+    margin-bottom: calc( 35px + 79 * ((100vw - 576px) / (1834 - 576)));
+  }
 }
 
 .callback__picture img {
@@ -1522,5 +1529,183 @@ body {
   background-color: #0278e5;
   border-radius: 27px;
   color: white !important;
+}
+
+.contacts {
+  margin-bottom: 140px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1834px) {
+  .contacts {
+    margin-bottom: calc( 60px + 80 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.contacts__title {
+  margin-bottom: 42px;
+}
+
+@media screen and (max-width: 1834px) {
+  .contacts__title {
+    margin-bottom: calc( 20px + 22 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.contacts__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 82px;
+}
+
+@media screen and (max-width: 1024px) {
+  .contacts__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.contacts__map {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  min-height: 553px;
+}
+
+.contacts__info {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (max-width: 1024px) {
+  .contacts__info {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+}
+
+.contacts__info_text {
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.contacts__info_text:not(:last-child) {
+  margin-bottom: 51px;
+}
+
+@media screen and (max-width: 1834px) {
+  .contacts__info_text:not(:last-child) {
+    margin-bottom: calc( 30px + 21 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.contacts__info_icons {
+  margin-bottom: 81px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 1834px) {
+  .contacts__info_icons {
+    margin-bottom: calc( 60px + 21 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.contacts__icon:not(:last-child) {
+  margin-right: 17px;
+}
+
+@media screen and (max-width: 1834px) {
+  .contacts__icon:not(:last-child) {
+    margin-right: calc( 10px + 7 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.contacts__icon a {
+  background-color: #0278e5;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.contacts__btn a {
+  font-weight: 500;
+  font-size: 1.125rem;
+  padding: 16px 44px;
+  background-color: #0278e5;
+  color: white;
+  border-radius: 27px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #faf8f7;
+  padding-top: 36px;
+  padding-left: 32px;
+  padding-bottom: 40px;
+}
+
+@media screen and (max-width: 1834px) {
+  .footer {
+    padding-top: calc( 20px + 16 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+@media screen and (max-width: 1834px) {
+  .footer {
+    padding-left: calc( 20px + 12 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+@media screen and (max-width: 1834px) {
+  .footer {
+    padding-bottom: calc( 20px + 20 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.footer__copyright {
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-bottom: 31px;
+}
+
+.footer__nav ul li {
+  display: inline-block;
+  color: #0278e5;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.footer__nav ul li:not(:last-child) {
+  margin-right: 55px;
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 1834px) {
+  .footer__nav ul li:not(:last-child) {
+    margin-right: calc( 20px + 35 * ((100vw - 576px) / (1834 - 576)));
+  }
 }
 /*# sourceMappingURL=style.css.map */

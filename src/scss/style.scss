@@ -936,6 +936,7 @@ body {
     background-color: $cremWhite;
     // .callback__picture
     position: relative;
+    @include adaptiveValue("margin-bottom", 114, 35, $containerWidth, $mobileWidth);
     &__picture {
         & img {
             @include adaptiveValue("height", 592, 492, $containerWidth, $tabletWidth);
@@ -1026,5 +1027,152 @@ body {
         background-color: $blue;
         border-radius: 27px;
         color: white !important;
+    }
+}
+
+//Contacts
+
+.contacts {
+    // .contacts__title
+    @include adaptiveValue("margin-bottom", 140, 60, $containerWidth, $mobileWidth);
+    width: 100%;
+    &__title {
+        @include adaptiveValue("margin-bottom", 42, 20, $containerWidth, $mobileWidth);
+    }
+
+    // .contacts__content
+
+    &__content {
+        display: flex;
+        gap: 82px;
+        @media screen and (max-width: #{$smallDesktop + px}) {
+            flex-direction: column;
+        }
+    }
+
+    // .contacts__map
+
+    &__map {
+        flex-basis: 60%;
+        min-height: 553px;
+    }
+
+    // .contacts__info
+
+    &__info {
+        flex-basis: 40%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        // .contacts__info_text
+        @media screen and (max-width: #{$smallDesktop + px}) {
+            align-items: center;
+            text-align: center;
+        }
+        &_text {
+            font-size: 1.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            &:not(:last-child) {
+                @include adaptiveValue("margin-bottom", 51, 30, $containerWidth, $mobileWidth);
+            }
+        }
+
+        // .contacts__info_icons
+
+        &_icons {
+            @include adaptiveValue("margin-bottom", 81, 60, $containerWidth, $mobileWidth);
+            display: flex;
+        }
+    }
+
+    // .contacts__icon
+
+    &__icon {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-right", 17, 10, $containerWidth, $mobileWidth);
+        }
+        & a {
+            background-color: $blue;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+        }
+    }
+
+    // .contacts__btn
+
+    &__btn {
+        & a {
+            font-weight: 500;
+            font-size: 1.125rem;
+            padding: 16px 44px;
+            background-color: $blue;
+            color: white;
+            border-radius: 27px;
+        }
+    }
+}
+
+.footer {
+    // .footer__copyright
+    width: 100%;
+    background-color: $cremWhite;
+    @include adaptiveValue("padding-top", 36, 20, $containerWidth, $mobileWidth);
+    @include adaptiveValue("padding-left", 32, 20, $containerWidth, $mobileWidth);
+    @include adaptiveValue("padding-bottom", 40, 20, $containerWidth, $mobileWidth);
+    &__copyright {
+        font-size: 1.125rem;
+        font-weight: 300;
+        letter-spacing: 0.04em;
+        margin-bottom: 31px;
+    }
+
+    // .footer__nav
+
+    &__nav {
+        & ul li {
+            display: inline-block;
+            color: $blue;
+            font-size: 0.875rem;
+            letter-spacing: 0.04em;
+            font-weight: 300;
+            text-decoration: underline;
+            &:not(:last-child){
+                @include adaptiveValue("margin-right", 55, 20, $containerWidth, $mobileWidth);
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+//Portfolio
+
+.portfolio {
+
+    // .portfolio__title
+
+    &__title {
+    }
+
+    // .portfolio__content
+
+    &__content {
+    }
+
+    // .portfolio__slider
+
+    &__slider {
+    }
+
+    // .portfolio__slide
+
+    &__slide {
+    }
+
+    // .portfolio__controller
+
+    &__controller {
     }
 }

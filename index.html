@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/js/slick/slick.css" />
     <title>Mistral - test</title>
 </head>
 
@@ -631,12 +632,22 @@
                     </div>
                 </div>
             </div>
-            <!-- 
+
             <div class="portfolio">
                 <div class="portfolio__title">
 
                 </div>
-            </div> -->
+                <div class="portfolio__content">
+                    <div class="portfolio__slider">
+                        <div class="portfolio__slide">
+                            <img src="assets/img/portfolio/portfolio.png" alt="potfolio-image">
+                        </div>
+                    </div>
+                    <div class="portfolio__controller">
+                        
+                    </div>
+                </div>
+            </div>
 
 
             <div class="schema">
@@ -834,15 +845,32 @@
                 </div>
                 <div class="contacts__content">
                     <div class="contacts__map">
-
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A9ac1bad9d8e629f4ddde4c6a54e6fbe4c2a4c5807d1eb3a1c19c5945e473e3f5&amp;source=constructor"
+                            width="100%" height="553" frameborder="0"></iframe>
                     </div>
                     <div class="contacts__info">
                         <div class="contacts__info_text">
-
+                            <a href="tel:+78127726242">+7 (812) 772-62-42</a>
+                        </div>
+                        <div class="contacts__info_text">
+                            <a href="mail:info@mistral.ru">info@mistral.ru</a>
+                        </div>
+                        <div class="contacts__info_text">
+                            <a href="mail:info@mistral.ru">Санкт-Петербург, ул. Крупской, 55</a>
                         </div>
                         <div class="contacts__info_icons">
                             <div class="contacts__icon">
-
+                                <a href="#" class="_icon-vk"></a>
+                            </div>
+                            <div class="contacts__icon">
+                                <a href="#" class="_icon-fb"></a>
+                            </div>
+                            <div class="contacts__icon">
+                                <a href="#" class="_icon-inst"></a>
+                            </div>
+                            <div class="contacts__icon">
+                                <a href="#" class="_icon-youtube"></a>
                             </div>
                         </div>
                         <!-- Тут конечно можно было создать кнопку в отдельную компоненту. Но в разделе с обратной связью я
@@ -850,17 +878,36 @@
                         которые я вынес в отдельный блок, но думаю на проде за такое решение с кнопкой можно было бы
                         получить по шапке -->
                         <div class="contacts__btn">
-
+                            <a href="#">Написать директору</a>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <footer class="footer">
+                <div class="footer__copyright">
+                    © «Мистраль», 2022
+                </div>
+                <div class="footer__nav">
+                    <nav>
+                        <ul>
+                            <li><a href="#"></a>Реквизиты компании</li>
+                            <li><a href="#"></a>Политика конфиденциальности</li>
+                            <li><a href="#"></a>Политика cookies</li>
+                        </ul>
+                    </nav>
+                </div>
+            </footer>
 
         </div>
 
         </div>
     </main>
 
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="src/js/slick/slick.min.js"></script>
     <script src="src/js/script.js"></script>
 </body>
 
