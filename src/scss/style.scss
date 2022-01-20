@@ -865,7 +865,7 @@ body {
 
 .news {
     // .news__title
-
+    @include adaptiveValue("margin-bottom", 276, 100, $containerWidth, $mobileWidth);
     &__title {
         margin-left: 0;
         margin-right: auto;
@@ -925,5 +925,106 @@ body {
         padding: 9px 28px;
         border-radius: 20px;
         background-color: $cremWhite;
+    }
+}
+
+//callback
+
+.callback {
+    display: flex;
+    width: 100%;
+    background-color: $cremWhite;
+    // .callback__picture
+    position: relative;
+    &__picture {
+        & img {
+            @include adaptiveValue("height", 592, 492, $containerWidth, $tabletWidth);
+            @include adaptiveValue("width", 317, 217, $containerWidth, $tabletWidth);
+            position: absolute;
+            bottom: 0;
+            left: 2%;
+            transform: translateX(35%);
+            object-fit: cover;
+        }
+        @media screen and (max-width: #{$smallDesktop + px}) {
+            display: none;
+        }
+    }
+
+    // .callback__form
+
+    &__form {
+        padding: 15px;
+    }
+}
+.form-cb {
+    // .form-cb__title
+    align-self: flex-end;
+    @include adaptiveValue("margin-right", 250, 0, $containerWidth, $smallDesktop);
+    margin-left: auto;
+    @include adaptiveValue("margin-bottom", 78, 10, $containerWidth, $mobileWidth);
+    @include adaptiveValue("margin-top", 65, 10, $containerWidth, $mobileWidth);
+    @media screen and (max-width: #{$smallDesktop + px}) {
+        align-self: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        margin-bottom: 5px;
+    }
+
+    // .form-cb__description
+
+    &__description {
+        color: $blue;
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        margin-bottom: 32px;
+        &_big {
+            font-size: 2.25rem;
+        }
+    }
+
+    & form {
+        & input[type="text"] {
+            margin-bottom: 26px;
+        }
+    }
+
+    & form input[type="text"] {
+        @include adaptiveValue("width", 420, 250, $containerWidth, $mobileWidth);
+        @include adaptiveValue("padding-left", 36, 10, $containerWidth, $mobileWidth);
+        color: $black;
+        line-height: 54px;
+        &::placeholder {
+            color: $black;
+            letter-spacing: 0.04em;
+            font-size: 1.125rem;
+            font-weight: 300;
+        }
+    }
+
+    & form input[type="submit"] {
+        color: white;
+        background-color: $blue;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        font-size: 1.125rem;
+    }
+
+    // .form-cb__submit
+
+    &__submit {
+        display: inline-block;
+        padding: 14px 46px;
+        background-color: $blue;
+        border-radius: 27px;
+        color: white !important;
     }
 }
