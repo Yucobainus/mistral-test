@@ -1139,7 +1139,7 @@ body {
             letter-spacing: 0.04em;
             font-weight: 300;
             text-decoration: underline;
-            &:not(:last-child){
+            &:not(:last-child) {
                 @include adaptiveValue("margin-right", 55, 20, $containerWidth, $mobileWidth);
                 margin-bottom: 8px;
             }
@@ -1150,29 +1150,96 @@ body {
 //Portfolio
 
 .portfolio {
-
+    width: 100%;
     // .portfolio__title
-
+    @include adaptiveValue("margin-bottom", 42, 30, $containerWidth, $mobileWidth);
     &__title {
+        @include adaptiveValue("margin-bottom", 42, 20, $containerWidth, $mobileWidth);
     }
 
     // .portfolio__content
 
     &__content {
+        width: 100%;
     }
 
     // .portfolio__slider
 
     &__slider {
+        display: flex;
+        @include adaptiveValue("margin-bottom", 35, 20, $containerWidth, $mobileWidth);
     }
 
     // .portfolio__slide
 
     &__slide {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    & .slick-vertical .slick-slide{
+        border: none;
+        outline: none;
     }
 
     // .portfolio__controller
 
     &__controller {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        & .arrow {
+            width: 15px;
+            height: 15px;
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        & .arrow._next {
+            transform: rotate(180deg);
+        }
+        &_dots {
+            width: 100%;
+            height: 1px;
+            ul {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                column-gap: 31px;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #E3E4E5;
+                    & button {
+                        display: none;
+                    }
+                    &.slick-active {
+                        &:before{
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 2px;
+                            width: 70%;
+                            background-color: $black;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

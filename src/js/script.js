@@ -14,3 +14,5 @@ mobileItem.addEventListener('click', function (e) {
     iconMenu.classList.remove('_active')
     menuBody.classList.remove('_active')
 })
+
+

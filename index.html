@@ -634,17 +634,38 @@
             </div>
 
             <div class="portfolio">
-                <div class="portfolio__title">
-
+                <div class="portfolio__title content-title">
+                    <span></span>
+                    <h2>Выполненные работы</h2>
                 </div>
                 <div class="portfolio__content">
-                    <div class="portfolio__slider">
+                    <div class="portfolio__slider carousel-portfolio" id="slider">
+
                         <div class="portfolio__slide">
                             <img src="assets/img/portfolio/portfolio.png" alt="potfolio-image">
                         </div>
+
+
+                        <div class="portfolio__slide">
+
+                            <img src="assets/img/portfolio/portfolio.png" alt="potfolio-image">
+
+                        </div>
+
+                        <div class="portfolio__slide">
+
+                            <img src="assets/img/portfolio/portfolio.png" alt="potfolio-image">
+
+                        </div>
                     </div>
                     <div class="portfolio__controller">
-                        
+                        <div class="arrow _prev " id="portfolio__arrow-prev">
+                            <img src="assets/icons/arrow.svg" alt="arrow">
+                        </div>
+                        <div class="portfolio__controller_dots"></div>
+                        <div class="arrow _next " id="portfolio__arrow-next">
+                            <img src="assets/icons/arrow.svg" alt="arrow">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -899,16 +920,29 @@
                     </nav>
                 </div>
             </footer>
-
         </div>
 
         </div>
     </main>
 
+
+
+    <script src="src/js/script.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="src/js/slick/slick.min.js"></script>
-    <script src="src/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel-portfolio').slick({
+                infinite: true,
+                vertical: true,
+                dots: true,
+                appendDots: $('.portfolio__controller_dots'),
+                prevArrow: $('#portfolio__arrow-prev'),
+                nextArrow: $('#portfolio__arrow-next'),
+            });
+        });
+    </script>
 </body>
 
 </html>

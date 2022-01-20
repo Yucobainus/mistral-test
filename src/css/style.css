@@ -1708,4 +1708,133 @@ body {
     margin-right: calc( 20px + 35 * ((100vw - 576px) / (1834 - 576)));
   }
 }
+
+.portfolio {
+  width: 100%;
+  margin-bottom: 42px;
+}
+
+@media screen and (max-width: 1834px) {
+  .portfolio {
+    margin-bottom: calc( 30px + 12 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.portfolio__title {
+  margin-bottom: 42px;
+}
+
+@media screen and (max-width: 1834px) {
+  .portfolio__title {
+    margin-bottom: calc( 20px + 22 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.portfolio__content {
+  width: 100%;
+}
+
+.portfolio__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 35px;
+}
+
+@media screen and (max-width: 1834px) {
+  .portfolio__slider {
+    margin-bottom: calc( 20px + 15 * ((100vw - 576px) / (1834 - 576)));
+  }
+}
+
+.portfolio__slide {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.portfolio__slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.portfolio .slick-vertical .slick-slide {
+  border: none;
+  outline: none;
+}
+
+.portfolio__controller {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.portfolio__controller .arrow {
+  width: 15px;
+  height: 15px;
+}
+
+.portfolio__controller .arrow img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.portfolio__controller .arrow:hover {
+  cursor: pointer;
+}
+
+.portfolio__controller .arrow._next {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.portfolio__controller_dots {
+  width: 100%;
+  height: 1px;
+}
+
+.portfolio__controller_dots ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  -webkit-column-gap: 31px;
+          column-gap: 31px;
+}
+
+.portfolio__controller_dots ul li {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #E3E4E5;
+}
+
+.portfolio__controller_dots ul li button {
+  display: none;
+}
+
+.portfolio__controller_dots ul li.slick-active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 70%;
+  background-color: #1d1700;
+}
 /*# sourceMappingURL=style.css.map */
