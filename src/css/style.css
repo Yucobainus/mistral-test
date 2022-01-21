@@ -150,7 +150,7 @@ body._lock {
 }
 
 .header__nav-item:hover {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .header__nav-item::before {
@@ -762,7 +762,7 @@ body._lock {
 }
 
 .tags__item:hover {
-  opacity: .2;
+  opacity: 0.2;
   background-color: #0278e5;
   color: white;
 }
@@ -2195,6 +2195,7 @@ body._lock {
 .scrollbar__container {
   width: 100%;
   margin-bottom: 28px;
+  position: relative;
 }
 
 .scrollbar__slider {
@@ -2205,7 +2206,6 @@ body._lock {
   height: 2px;
   background-color: #59abf8;
   outline: none;
-  opacity: 1;
 }
 
 .scrollbar__slider::-webkit-slider-thumb {
@@ -2231,7 +2231,12 @@ body._lock {
   }
 }
 
+.scrollbar__value {
+  position: relative;
+}
+
 .scrollbar__value input {
+  position: relative;
   width: 100%;
   padding: 10px 0;
   border: 1px solid #1d1700;
@@ -2350,5 +2355,86 @@ body._lock {
   -webkit-box-shadow: none;
           box-shadow: none;
   margin-right: 12px;
+}
+
+.sidebar-range {
+  position: relative;
+}
+
+.sidebar-range input[type="range"] {
+  position: absolute;
+  z-index: 6;
+  pointer-events: none;
+  height: 10px;
+  left: 0;
+  -webkit-appearance: none;
+  width: 100%;
+  opacity: 0;
+}
+
+.sidebar-range input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 0;
+  background-color: #0278e5;
+  -webkit-appearance: none;
+}
+
+.sidebar-range input[type="range"]::-webkit-slider-thumb:hover {
+  cursor: pointer;
+}
+
+.sidebar-range__slider {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar-range__slider_track {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  height: 2px;
+  background-color: #8b8b8b;
+}
+
+.sidebar-range__slider_range {
+  position: absolute;
+  z-index: 2;
+  left: 25%;
+  right: 25%;
+  top: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #0278e5;
+}
+
+.sidebar-range__slider_thumb {
+  position: absolute;
+  z-index: 3;
+  width: 18px;
+  height: 18px;
+  background-color: #0278e5;
+  border-radius: 50%;
+}
+
+.sidebar-range__slider_thumb.left {
+  left: 0%;
+}
+
+.sidebar-range__slider_thumb.right {
+  right: 100%;
 }
 /*# sourceMappingURL=style.css.map */

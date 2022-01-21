@@ -106,18 +106,26 @@
                 <div class="scrollbar__title">
                     Цена:
                 </div>
-                <div class="scrollbar__container">
-                    <input type="range" min="20" max="100" value="50" class="scrollbar__slider" id="myRange">
+                <div class="scrollbar__container sidebar-range" id="price">
+                    <input type="range" min="0" max="154600" value="0" class="sidebar-range_left" id="price-left">
+                    <input type="range" min="0" max="154600" value="154600" class="sidebar-range_right"
+                        id="price-right">
+                    <div class="sidebar-range__slider">
+                        <div class="sidebar-range__slider_track" id="price-track"></div>
+                        <div class="sidebar-range__slider_range" id="price-range"></div>
+                        <div class="sidebar-range__slider_thumb left" id="price-thumb-min"></div>
+                        <div class="sidebar-range__slider_thumb right" id="price-thumb-max"></div>
+                    </div>
                 </div>
                 <div class="scrollbar__options">
                     <div class="scrollbar__value">
-                        <input type="text" value="0 ₽">
+                        <input type="text" value="0" id="price-value-min">
                     </div>
                     <div class="scrollbar__line">
 
                     </div>
                     <div class="scrollbar__value">
-                        <input type="text" value="154600 ₽">
+                        <input type="text" value="154600" id="price-value-max">
                     </div>
                 </div>
             </div>
@@ -126,22 +134,28 @@
                 <div class="scrollbar__title">
                     Площадь помещения:
                 </div>
-                <div class="scrollbar__container">
-                    <input type="range" min="20" max="100" value="50" class="scrollbar__slider" id="myRange">
+                <div class="scrollbar__container sidebar-range" id="area">
+                    <input type="range" min="15" max="100" value="15" class="sidebar-range_left" id="area-left">
+                    <input type="range" min="15" max="100" value="42" class="sidebar-range_right" id="area-right">
+                    <div class="sidebar-range__slider">
+                        <div class="sidebar-range__slider_track" id="area-track"></div>
+                        <div class="sidebar-range__slider_range" id="area-range"></div>
+                        <div class="sidebar-range__slider_thumb left" id="area-thumb-min"></div>
+                        <div class="sidebar-range__slider_thumb right" id="area-thumb-max"></div>
+                    </div>
                 </div>
                 <div class="scrollbar__options">
                     <div class="scrollbar__value">
-                        <input type="text" value="15 м2">
+                        <input type="text" value="15" id="area-value-min">
                     </div>
                     <div class="scrollbar__line">
 
                     </div>
                     <div class="scrollbar__value">
-                        <input type="text" value="42 м2">
+                        <input type="text" value="42" id="area-value-max">
                     </div>
                 </div>
             </div>
-
 
             <div class="sidebar__list list">
                 <div class="list__title">
@@ -152,51 +166,49 @@
                 </div>
                 <div class="list__checkbox">
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="abask">
+                        <label for="abask">ABASK (4)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="alc">
+                        <label for="alc">ALC (2)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="Aeronic">
+                        <label for="Aeronic">Aeronic (14)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="bosh">
+                        <label for="bosh">Bosh (4)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="candy">
+                        <label for="candy">Candy (7)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="centec">
+                        <label for="centec">Centec (11)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="candy2">
+                        <label for="candy2">Candy (7)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="centec2">
+                        <label for="centec2">Centec (11)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="abask2">
+                        <label for="abask2">ABASK (4)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="alc2">
+                        <label for="alc2">ALC (2)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="aeronic2">
+                        <label for="aeronic2">Aeronic (14)</label>
                     </div>
-
-
                 </div>
             </div>
 
@@ -207,58 +219,79 @@
                 </div>
                 <div class="list__checkbox _not-overflow">
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="ion">
+                        <label for="ion">Ионизация (46)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="climat">
+                        <label for="climat">Климат контроль (22)</label>
                     </div>
                     <div class="list__checkbox_item">
-                        <input type="checkbox" id="check_one">
-                        <label for="check_one">ABASK (4)</label>
+                        <input type="checkbox" id="turbo">
+                        <label for="turbo">Турбо (144)</label>
                     </div>
-
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="eco">
+                        <label for="eco">Эко (4)</label>
+                    </div>
+                    <div class="list__checkbox_item">
+                        <input type="checkbox" id="wifi">
+                        <label for="wifi">Wi Fi модуль (70)</label>
+                    </div>
                 </div>
             </div>
-
 
             <div class="sidebar__scrollbar scrollbar">
                 <div class="scrollbar__title">
                     Мощность охлаждения
                 </div>
-                <div class="scrollbar__container">
-                    <input type="range" min="20" max="100" value="50" class="scrollbar__slider" id="myRange">
+                <div class="scrollbar__container sidebar-range" id="cool-geas">
+                    <input type="range" min="1.5" max="150" value="1.5" step=".5" class="sidebar-range_left"
+                        id="cool-geas-left">
+                    <input type="range" min="1.5" max="150" value="150" step=".5" class="sidebar-range_right"
+                        id="cool-geas-right">
+                    <div class="sidebar-range__slider">
+                        <div class="sidebar-range__slider_track" id="cool-geas-track"></div>
+                        <div class="sidebar-range__slider_range" id="cool-geas-range"></div>
+                        <div class="sidebar-range__slider_thumb left" id="cool-geas-thumb-min"></div>
+                        <div class="sidebar-range__slider_thumb right" id="cool-geas-thumb-max"></div>
+                    </div>
                 </div>
                 <div class="scrollbar__options">
                     <div class="scrollbar__value">
-                        <input type="text" value="15 м2">
+                        <input type="text" value="1.5" id="cool-geas-value-min">
                     </div>
                     <div class="scrollbar__line">
 
                     </div>
                     <div class="scrollbar__value">
-                        <input type="text" value="42 м2">
+                        <input type="text" value="150" id="cool-geas-value-max">
                     </div>
                 </div>
             </div>
-
             <div class="sidebar__scrollbar scrollbar">
                 <div class="scrollbar__title">
                     Уровень шума
                 </div>
-                <div class="scrollbar__container">
-                    <input type="range" min="20" max="100" value="50" class="scrollbar__slider" id="myRange">
+                <div class="scrollbar__container sidebar-range" id="noize">
+                    <input type="range" min="1" max="150" value="1" class="sidebar-range_left" id="noize-left">
+                    <input type="range" min="1" max="150" value="150" class="sidebar-range_right" id="noize-right">
+                    <div class="sidebar-range__slider">
+                        <div class="sidebar-range__slider_track" id="noize-track"></div>
+                        <div class="sidebar-range__slider_range" id="noize-range"></div>
+                        <div class="sidebar-range__slider_thumb left" id="noize-thumb-min"></div>
+                        <div class="sidebar-range__slider_thumb right" id="noize-thumb-max"></div>
+                    </div>
                 </div>
                 <div class="scrollbar__options">
                     <div class="scrollbar__value">
-                        <input type="text" value="15 м2">
+                        <input type="text" value="1.5" id="noize-value-min">
                     </div>
                     <div class="scrollbar__line">
 
                     </div>
                     <div class="scrollbar__value">
-                        <input type="text" value="42 м2">
+                        <input type="text" value="150" id="noize-value-max">
                     </div>
                 </div>
             </div>
@@ -376,7 +409,7 @@
                                 Площадь помещения:
                             </div>
                             <div class="catalog-item__parameter_value">
-                                до 26 м2
+                                до 26 м²
                             </div>
                         </div>
                         <div class="catalog-item__parameter">
@@ -442,7 +475,7 @@
                                 Площадь помещения:
                             </div>
                             <div class="catalog-item__parameter_value">
-                                до 26 м2
+                                до 26 м²
                             </div>
                         </div>
                         <div class="catalog-item__parameter">
@@ -508,7 +541,7 @@
                                 Площадь помещения:
                             </div>
                             <div class="catalog-item__parameter_value">
-                                до 26 м2
+                                до 26 м²
                             </div>
                         </div>
                         <div class="catalog-item__parameter">
@@ -573,7 +606,7 @@
                                 Площадь помещения:
                             </div>
                             <div class="catalog-item__parameter_value">
-                                до 26 м2
+                                до 26 м²
                             </div>
                         </div>
                         <div class="catalog-item__parameter">
@@ -639,7 +672,7 @@
                                 Площадь помещения:
                             </div>
                             <div class="catalog-item__parameter_value">
-                                до 26 м2
+                                до 26 м²
                             </div>
                         </div>
                         <div class="catalog-item__parameter">
@@ -705,7 +738,7 @@
                                 Площадь помещения:
                             </div>
                             <div class="catalog-item__parameter_value">
-                                до 26 м2
+                                до 26 м²
                             </div>
                         </div>
                         <div class="catalog-item__parameter">
@@ -1179,66 +1212,14 @@
 
 
 
-    <script src="src/js/script.js"></script>
+
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="src/js/slick/slick.min.js"></script>
-    <script>
+    <script src="src/js/sliders.js"></script>
+    <script src="src/js/script.js"></script>
+    <script src="src/js/scrollbars.js"></script>
 
-
-        const sidebarIcon = document.querySelector('.active')
-        const sidebar = document.querySelector('.main__sidebar')
-        const mainContent = document.querySelector('.main__content')
-
-        if (sidebarIcon) {
-            sidebarIcon.addEventListener('click', function (e) {
-                sidebar.classList.toggle('_active')
-                sidebarIcon.classList.toggle('_disable')
-                document.body.classList.toggle('_lock');
-                mainContent.classList.toggle('_sidebar-active')
-            })
-        }
-
-        $(document).mouseup(function (e) {
-            if (!sidebar.contains(e.target)) {
-                sidebar.classList.remove('_active');
-                sidebarIcon.classList.remove('_disable')
-                document.body.classList.remove('_lock');
-                mainContent.classList.remove('_sidebar-active')
-            }
-        });
-
-        $(document).ready(function () {
-            $('.carousel-portfolio').slick({
-                infinite: true,
-                vertical: true,
-                dots: true,
-                verticalSwiping: true,
-                appendDots: $('.portfolio__controller_dots'),
-                prevArrow: $('#portfolio__arrow-prev'),
-                nextArrow: $('#portfolio__arrow-next'),
-            });
-        });
-
-        $(document).ready(function () {
-            $('.feedback-carousel').slick({
-                infinite: true,
-                vertical: true,
-                verticalSwiping: true,
-                prevArrow: $('#feedback__arrow-prev'),
-                nextArrow: $('#feedback__arrow-next'),
-                responsive: [{
-
-                    breakpoint: 576,
-                    settings: {
-                        prevArrow: $('#feedback__mobile-prev'),
-                        nextArrow: $('#feedback__mobile-next'),
-                    }
-
-                }]
-            });
-        });
-    </script>
 </body>
 
 </html>
